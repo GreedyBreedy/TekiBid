@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Signup Form</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 main">
+
+                <form id="form1">
+
+                    <h1> Signup form </h1>
+
+                    <input class="box" type="text" name="name" id="name" placeholder="Name" required /><br>
+
+                    <input class="box" type="email" name="email" id="email" placeholder="E-Mail " required /><br>
+
+                    <input class="box" type="password" name="password" id="password" placeholder="Password " required/><br>
+
+                    <input class="box" type="text" name="phone" id="phone" placeholder="Phone Number " required/><br>
+                    <br>
+                    <button id="button" onClick="run()">Submit</button>
+
+                </form>
+                <script>
+                    var button = document.querySelector("button");
+                    button.onclick = async function run() {
+                        const { MongoClient } = require('mongodb');
+                        const uri = "mongodb://miguelibrahim:Pagi9021@cluster0-shard-00-00.lrfwj.mongodb.net:27017,cluster0-shard-00-01.lrfwj.mongodb.net:27017,cluster0-shard-00-02.lrfwj.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-sx9b0g-shard-0&authSource=admin&retryWrites=true&w=majority";
+                        const client = new MongoClient(uri);
+                        client.connect();
+                        console.log("Connection was successful");
+                        var name = document.getElementById("name").value;
+                        var email = document.getElementById("email").value;
+                        var password = document.getElementById("password").value;
+                        var phoneNumber = document.getElementById("phone").value;
+                        createUser(client, {
+                            name: name,
+                            email: email,
+                            password: password,
+                            phone: phoneNumber,
+                        });
+                        location.href = "singup_sucess.html";
+                    }
+                    async function createUser(client, newUser) {
+                        const result = await client.db("SignUp").collection("Registration").insertOne(newUser);
+                        console.log(`The ID: ${result.insertedId}`);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
