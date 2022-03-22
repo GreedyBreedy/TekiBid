@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
+    <link rel="icon" href="teki_talent.jpg">
     
 </head>
 
@@ -412,7 +413,7 @@
             </div>
             <div class="row clearfix">
                 <div class="">
-                    <form action="demo.js" method="post">
+                    
                         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
                             <input type="email" name="email" placeholder="Email" required />
                         </div>
@@ -795,15 +796,18 @@
                         <option value ="O" id="other">other</option>                       
                       </select>
                       <br><br><br>
-                        <input class="button" type="submit" value="Register" />
+                        <input class="button" type="submit" value="Register" onclick="run()"/>
 
-                    </form>
+                    
                     
                 </div>
             </div>
         </div>
     </div>
-    <script></script>
+    <script> function run(){
+        window.location.href = "CreatePersonelle.html";
+    }
+        </script>
 
 </body>
 
