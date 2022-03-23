@@ -5,15 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Teki Bid</title>
     <link rel="icon" href="teki_talent.jpg">
     
 </head>
 
 <body>
     <style>
+         @font-face {
+            font-family: Poppins;
+            src: url(Poppins-Regular.ttf);
+            }
+
+        div {
+            font-family: Poppins;
+        }
         body {
-            font-family: Verdana, Geneva, sans-serif;
+            font-family: Poppins;
             font-size: 14px;
             background: #f2f2f2;
         }
@@ -409,7 +417,7 @@
     <div class="form_wrapper">
         <div class="form_container">
             <div class="title_container">
-                <a href="index.html"><img src="teki_talent.jpg" style="width:100px"></a>
+                <a href="index.html"><img src="teki_talent.jpg" style="width:100px"style="font-family:Poppins"></a>
             </div>
             <div class="row clearfix">
                 <div class="">
@@ -436,12 +444,14 @@
                             </div>
                         </div>
                         <div class="input_field radio_option">
-                            <input type="radio" name="radiogroup1" id="rd1">
+                            <input type="radio" name="radiogroup1" id="rd1"style="font-family:Poppins">
                             <label for="rd1">Male</label>
                             <input type="radio" name="radiogroup1" id="rd2">
                             <label for="rd2">Female</label>
+                            <input type="radio" name="radiogroup1" id="rd2">
+                            <label for="rd2">Non-binary</label>
                         </div>
-                        <div class="input_field select_option">
+                        <div class="input_field select_option" style="font-family:Poppins">
                             <select>
                                 <!--Name of the countries you currently live in-->
                         <option>Select a country</option>
@@ -704,11 +714,11 @@
                         </div>
                         <div class="input_field checkbox_option">
                             <input type="checkbox" id="cb1">
-                            <label for="cb1">I agree with terms and conditions</label>
+                            <label for="cb1"style="font-family:Poppins">I agree with terms and conditions</label>
                         </div>
                         <div class="input_field checkbox_option">
-                            <input type="checkbox" id="cb2">
-                            <label for="cb2">I want to receive the newsletter</label>
+                            <input type="checkbox" id="cb2"style="font-family:Poppins">
+                            <label for="cb2"style="font-family:Poppins">I want to receive the newsletter</label>
                         </div>
                         <div class="input_field select_option">
                             <select>
