@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>Teki Bid</title>
     <link rel="icon" href="teki_talent.jpg">
 </head>
+
 <body>
     <style>
-         @font-face {
+        @font-face {
             font-family: Poppins;
             src: url(Poppins-Regular.ttf);
             }
@@ -17,11 +19,239 @@
         div {
             font-family: Poppins;
         }
-        html{
-            font-family: Poppins;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Poppins, sans-serif;
         }
         
+        body {
+            background: linear-gradient(90deg, #ddc0fa, RGB(154,49,113));
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        /* Height and width of the window of th document*/
+        .screen {
+            background: linear-gradient(90deg, white, RGB(154,0,113));
+            position: relative;
+            height: 860px;
+            width: 660px;
+            box-shadow: 0px 0px 24px RGB(154,49,113);
+        }
+        
+        .screen__content {
+            z-index: 1;
+            position: relative;
+            height: 100%;
+        }
+        
+        .screen__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+        }
+        
+        .screen__background__shape {
+            transform: rotate(45deg);
+            position: absolute;
+        }
+        
+        .screen__background__shape1 {
+            height: 520px;
+            width: 520px;
+            background: #FFF;
+            top: -50px;
+            right: 120px;
+            border-radius: 0 72px 0 0;
+        }
+        
+        .screen__background__shape2 {
+            height: 220px;
+            width: 220px;
+            background: RGB(154,49,113);
+            top: -172px;
+            right: 0;
+            border-radius: 32px;
+        }
+        
+        .screen__background__shape3 {
+            height: 540px;
+            width: 190px;
+            background: linear-gradient(270deg, RGB(154,49,113), #d067e6);
+            top: -24px;
+            right: 0;
+            border-radius: 32px;
+        }
+        
+        .screen__background__shape4 {
+            height: 400px;
+            width: 200px;
+            background: RGB(154,48,113);
+            top: 420px;
+            right: 50px;
+            border-radius: 60px;
+        }
+        
+        .login {
+            width: 420px;
+            padding: 30px;
+            padding-top: 156px;
+        }
+        
+        .login__field {
+            padding: 20px 0px;
+            position: relative;
+        }
+        
+        .login__icon {
+            position: absolute;
+            top: 0px;
+            color: RGB(154,49,113);
+        }
+        
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        .login__input {
+            border: none;
+            border-bottom: 2px solid RGB(154,49,113);
+            background: none;
+            padding: 10px;
+            padding-left: 24px;
+            font-weight: 700;
+            width: 75%;
+            transition: .2s;
+        }
+        
+        .login__input:active,
+        .login__input:focus,
+        .login__input:hover {
+            outline: none;
+            border-bottom-color: RGB(154,49,113);
+        }
+        
+        .login__submit {
+            background: #fff;
+            font-size: 14px;
+            margin-top: 30px;
+            padding: 16px 20px;
+            border-radius: 26px;
+            border: 1px solid RGB(154,49,113);
+            text-transform: uppercase;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            color: #4C489D;
+            box-shadow: 0px 2px 2px RGB(154,49,113);
+            cursor: pointer;
+            transition: .2s;
+        }
+        
+        .login__submit:active,
+        .login__submit:focus,
+        .login__submit:hover {
+            border-color: RGB(154,49,113);
+            outline: none;
+        }
+        
+        .button__icon {
+            font-size: 24px;
+            margin-left: auto;
+            color: RGB(154,49,113);
+        }
+        
+        .social-login {
+            position: absolute;
+            height: 440px;
+            width: 160px;
+            text-align: center;
+            bottom: 0px;
+            right: 0px;
+            color: #fff;
+        }
+        
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-login__icon {
+            padding: 20px 10px;
+            color: #fff;
+            text-decoration: none;
+            text-shadow: 0px 0px 8px RGB(154,49,113);
+        }
+        
+        .social-login__icon:hover {
+            transform: scale(1.5);
+        }
     </style>
-    <h1>PERSONELLE</h1>
+
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <a href="index.html"> <img src="teki_talent.jpg" style="width:100px" href="index.html"></a>
+                <form class="login" action="action.php" method="post">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="FirstName" class="login__input" placeholder="First Name" id="First_Name">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="LastName" class="login__input" placeholder="Last Name" id="Last_Name">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="email" class="login__input" placeholder="Email" id="email">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="tmp_pass" class="login__input" placeholder="Temporary Password" id="tmp_pass">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="Specialty" class="login__input" placeholder="Specialty" id="Specialty">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="experience" class="login__input" placeholder="Experience (In years)" id="EXP">
+                    </div>
+                    <button class="button login__submit">
+                        <span class="button__text" style="color:RGB(154,49,113)">Create Personelle</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>
+                    
+                    </button>
+                </form>
+                <div class="social-login">
+
+                    <div class="social-icons">
+                    </div>
+                </div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

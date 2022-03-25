@@ -11,7 +11,7 @@
 
 <body>
     <style>
-        @font-face {
+         @font-face {
             font-family: Poppins;
             src: url(Poppins-Regular.ttf);
             }
@@ -23,11 +23,11 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Raleway, sans-serif;
+            font-family: Poppins, sans-serif;
         }
         
         body {
-            background: linear-gradient(90deg, #C7C5F4, #776BCC);
+            background: linear-gradient(90deg, #ddc0fa, RGB(154,49,113));
         }
         
         .container {
@@ -36,13 +36,13 @@
             justify-content: center;
             min-height: 100vh;
         }
-        
+        /* Height and width of the window of th document*/
         .screen {
-            background: linear-gradient(90deg, #5D54A4, #7C78B8);
+            background: linear-gradient(90deg, white, RGB(154,0,113));
             position: relative;
-            height: 600px;
-            width: 360px;
-            box-shadow: 0px 0px 24px #5C5696;
+            height: 660px;
+            width: 460px;
+            box-shadow: 0px 0px 24px RGB(154,49,113);
         }
         
         .screen__content {
@@ -79,7 +79,7 @@
         .screen__background__shape2 {
             height: 220px;
             width: 220px;
-            background: #6C63AC;
+            background: RGB(154,49,113);
             top: -172px;
             right: 0;
             border-radius: 32px;
@@ -88,7 +88,7 @@
         .screen__background__shape3 {
             height: 540px;
             width: 190px;
-            background: linear-gradient(270deg, #5D54A4, #6A679E);
+            background: linear-gradient(270deg, RGB(154,49,113), #d067e6);
             top: -24px;
             right: 0;
             border-radius: 32px;
@@ -97,14 +97,14 @@
         .screen__background__shape4 {
             height: 400px;
             width: 200px;
-            background: #7E7BB9;
+            background: RGB(154,48,113);
             top: 420px;
             right: 50px;
             border-radius: 60px;
         }
         
         .login {
-            width: 320px;
+            width: 420px;
             padding: 30px;
             padding-top: 156px;
         }
@@ -116,17 +116,18 @@
         
         .login__icon {
             position: absolute;
-            top: 30px;
-            color: #7875B5;
+            top: 0px;
+            color: RGB(154,49,113);
         }
         
         html {
             overflow-y: hidden;
+            overflow-x: hidden;
         }
         
         .login__input {
             border: none;
-            border-bottom: 2px solid #D1D1D4;
+            border-bottom: 2px solid RGB(154,49,113);
             background: none;
             padding: 10px;
             padding-left: 24px;
@@ -139,7 +140,7 @@
         .login__input:focus,
         .login__input:hover {
             outline: none;
-            border-bottom-color: #6A679E;
+            border-bottom-color: RGB(154,49,113);
         }
         
         .login__submit {
@@ -148,14 +149,14 @@
             margin-top: 30px;
             padding: 16px 20px;
             border-radius: 26px;
-            border: 1px solid #D4D3E8;
+            border: 1px solid RGB(154,49,113);
             text-transform: uppercase;
             font-weight: 700;
             display: flex;
             align-items: center;
             width: 100%;
             color: #4C489D;
-            box-shadow: 0px 2px 2px #5C5696;
+            box-shadow: 0px 2px 2px RGB(154,49,113);
             cursor: pointer;
             transition: .2s;
         }
@@ -163,19 +164,19 @@
         .login__submit:active,
         .login__submit:focus,
         .login__submit:hover {
-            border-color: #6A679E;
+            border-color: RGB(154,49,113);
             outline: none;
         }
         
         .button__icon {
             font-size: 24px;
             margin-left: auto;
-            color: #7875B5;
+            color: RGB(154,49,113);
         }
         
         .social-login {
             position: absolute;
-            height: 140px;
+            height: 440px;
             width: 160px;
             text-align: center;
             bottom: 0px;
@@ -193,7 +194,7 @@
             padding: 20px 10px;
             color: #fff;
             text-decoration: none;
-            text-shadow: 0px 0px 8px #7875B5;
+            text-shadow: 0px 0px 8px RGB(154,49,113);
         }
         
         .social-login__icon:hover {
@@ -204,7 +205,7 @@
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <a href="index.html"> <img src="teki_talent.jpg" style="width:50px" href="index.html"></a>
+                <a href="index.html"> <img src="teki_talent.jpg" style="width:100px" href="index.html"></a>
                 <form class="login" action="action.php" method="post">
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
@@ -215,7 +216,7 @@
                         <input type="PASSWORD" class="login__input" placeholder="Password" id="password">
                     </div>
                     <button class="button login__submit">
-                        <span class="button__text">Log In Now</span>
+                        <span class="button__text" style="color:RGB(154,49,113);font-family:Poppins">Log In Now</span>
                         <i class="button__icon fas fa-chevron-right"></i>
                     </button>
                 </form>
